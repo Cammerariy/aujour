@@ -1,17 +1,14 @@
 <context>
 
     <sample>
-        <item value="Ажур Ру"/>
-        <item value="Зайди на Ажур"/>
         <item value="Ажур"/>
+        <item value="Ажур Ру"/>
+        <item value="Мастерская Ажур"/>
+        <item value="Зайди на Ажур Ру"/>
         <item value="Хочу подарок из Ажура"/>
     </sample>
 
-    <input pattern="* (ажур ру*|зайди на ажур*|зайди на ажур*|хочу подарок из ажура*) *">
-        <output if="full($UserName)">
-            <item value="Привет, $UserName! Мне сразу зайти на сайт или сначала уточним что за подарок?"/>
-        </output>
-
+    <input pattern="* (ажур*|ажур ру*|мастерская ажур*|мастерская ажур ру*|зайди на ажур*|зайди на ажур ру*|хочу подарок из ажура*) *">
         <context if="empty($UserName)" id="name">
             <output value="Привет! Мастерская подарков Ажур.Ру на связи! Как тебя зовут?"/>
 
@@ -21,6 +18,10 @@
                 <context/>
             </input>
         </context>
+        
+        <output if="full($UserName)">
+            <item value="Привет, $UserName! Мне сразу зайти на сайт или сначала уточним что за подарок?"/>
+        </output>
     </input>
 
     <input pattern="* пока *">
