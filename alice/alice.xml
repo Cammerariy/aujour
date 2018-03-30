@@ -1,8 +1,10 @@
 <context>
 
     <sample>
-        <item value="Кто такая Алиса"/>
-        <item value="Что такое бот"/>
+        <item value="Ажур Ру"/>
+        <item value="Зайди на Ажур"/>
+        <item value="Ажур"/>
+        <item value="Хочу подарок из Ажура"/>
     </sample>
 
     <input pattern="* (привет*|здравствуй*) *">
