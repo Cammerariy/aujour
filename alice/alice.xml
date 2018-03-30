@@ -7,18 +7,17 @@
         <item value="Хочу подарок из Ажура"/>
     </sample>
 
-    <input pattern="* (привет*|здравствуй*) *">
+    <input pattern="* (ажур ру*|зайди на ажур*|зайди на ажур*|хочу подарок из ажура*) *">
         <output if="full($UserName)">
-            <item value="Привет, $UserName! Рада снова видеть тебя!"/>
-            <item value="Здравствуй, $UserName! Я уже успела соскучиться..."/>
+            <item value="Привет, $UserName! Мне сразу зайти на сайт или сначала уточним что за подарок?"/>
         </output>
 
         <context if="empty($UserName)" id="name">
-            <output value="Привет! Меня зовут Алиса! А это - демонстрация моего навыка, созданного с помощью платформы zenbot. Как тебя зовут?"/>
+            <output value="Привет! Мастерская подарков Ажур.Ру на связи! Как тебя зовут?"/>
 
             <input pattern="$Text">
                 <var name="UserName" value="cap($Text)" scope="user"/>
-                <output value="Приятно познакомиться, $UserName! Напиши мне что-нибудь."/>
+                <output value="Приятно познакомиться, $UserName! Давай уточним что за подарок мы ищем?."/>
                 <context/>
             </input>
         </context>
